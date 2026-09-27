@@ -1,0 +1,449 @@
+/* 高校实验室预约系统 - 通用样式 */
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-soft: #eef4ff;
+    --text-dark: #1f2937;
+    --text-regular: #4b5563;
+    --text-gray: #6b7280;
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --border: #e5e9f0;
+    --success: #16a34a;
+    --success-bg: #e8f7ee;
+    --danger: #dc2626;
+    --danger-bg: #fef2f2;
+    --warning: #d97706;
+    --warning-bg: #fffbeb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-dark);
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+/* ===== 顶部导航 ===== */
+.topbar {
+    height: 60px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.topbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar .logo-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #4b87ff 0%, #2563eb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar .logo-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.topbar .logo-text {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+.topbar .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-regular);
+}
+
+.topbar .user-info .role-tag {
+    font-size: 12px;
+    color: var(--primary);
+    background: var(--primary-soft);
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.topbar .user-info a {
+    color: var(--text-gray);
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.topbar .user-info a:hover {
+    color: var(--primary);
+}
+
+/* 导航链接 */
+.topbar .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    margin-left: 40px;
+}
+
+.topbar .main-nav a {
+    padding: 6px 14px;
+    font-size: 14px;
+    color: var(--text-regular);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: color .15s, background .15s;
+}
+
+.topbar .main-nav a:hover {
+    color: var(--primary);
+    background: var(--primary-soft);
+}
+
+/* ===== 内容区 ===== */
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 24px 48px;
+}
+
+.page-header {
+    margin-bottom: 22px;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.page-header .page-desc {
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+/* ===== 卡片 / 面板 ===== */
+.panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(17, 24, 39, 0.04);
+}
+
+.panel + .panel {
+    margin-top: 20px;
+}
+
+/* ===== 搜索表单 ===== */
+.search-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label {
+    font-size: 13px;
+    color: var(--text-regular);
+}
+
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field input[type="date"],
+.form-field input[type="datetime-local"],
+.form-field select,
+.form-field textarea {
+    height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+    color: var(--text-dark);
+    background: #fafbfd;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.form-field textarea {
+    height: auto;
+    padding: 10px 12px;
+    resize: vertical;
+    min-height: 90px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    background: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ===== 按钮 ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .2s, box-shadow .2s;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-ghost {
+    background: #ffffff;
+    color: var(--text-regular);
+    border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.btn-sm {
+    height: 32px;
+    padding: 0 14px;
+    font-size: 13px;
+}
+
+/* ===== 表格 ===== */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table.data-table th,
+table.data-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+table.data-table thead th {
+    background: #fafbfd;
+    color: var(--text-gray);
+    font-weight: 500;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+table.data-table tbody tr:hover {
+    background: #fafbfd;
+}
+
+table.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== 徽章 / 状态 ===== */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.badge-success {
+    color: var(--success);
+    background: var(--success-bg);
+}
+
+.badge-danger {
+    color: var(--danger);
+    background: var(--danger-bg);
+}
+
+.badge-warning {
+    color: var(--warning);
+    background: var(--warning-bg);
+}
+
+.badge-primary {
+    color: var(--primary);
+    background: var(--primary-soft);
+}
+
+/* 时段标签 */
+.time-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.chip {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 12px;
+    color: var(--primary);
+    background: var(--primary-soft);
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+/* ===== 提示信息 ===== */
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.alert-success {
+    color: var(--success);
+    background: var(--success-bg);
+    border: 1px solid #bbf7d0;
+}
+
+.alert-error {
+    color: var(--danger);
+    background: var(--danger-bg);
+    border: 1px solid #fecaca;
+}
+
+/* ===== 空状态 ===== */
+.empty {
+    padding: 48px 0;
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+/* ===== 详情页 ===== */
+.detail-list {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.detail-list th,
+.detail-list td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-list th {
+    width: 140px;
+    color: var(--text-gray);
+    font-weight: 500;
+    background: #fafbfd;
+}
+
+/* 预约时段单选 */
+.slot-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.slot-option {
+    position: relative;
+}
+
+.slot-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.slot-option .slot-label {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--text-regular);
+    background: #fafbfd;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .15s;
+}
+
+.slot-option input:checked + .slot-label {
+    color: var(--primary);
+    background: var(--primary-soft);
+    border-color: var(--primary);
+    font-weight: 500;
+}
+/* 积分信息 */
+.credit-tag {
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.credit-good {
+    background: #d1fae5;
+    color: #065f46;
+}
+.credit-warn {
+    background: #fef3c7;
+    color: #92400e;
+}
+.credit-danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
